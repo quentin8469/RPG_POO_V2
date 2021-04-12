@@ -1,4 +1,4 @@
-class Personnage:
+class Person:
     """
     docstring
     """
@@ -6,17 +6,18 @@ class Personnage:
     max_life = 100
 
     def __init__(
-        self,
-        name,
-        life=100,
+        self, name, life=100, classe="", strength=10, intelligence=10, mana=10
     ):
         """ initialation of a person """
         self.name = name
         self.life = life
-        print(f"Coucou je suis {self.name}")
+        self.classe = classe
+        self.strength = strength
+        self.intelligence = intelligence
+        self.mana = mana
 
     def presentation(self):
-        print(f"Nom: {self.name}, Points de vie: {self.life}")
+        print(f"Nom: {self.name}, Classe: {self.classe}, Points de vie: {self.life}")
 
     def attacks(self, ennemy):
         """ function for attacks an ennemy """
