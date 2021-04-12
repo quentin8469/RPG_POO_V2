@@ -21,3 +21,7 @@ class Personnage:
     def attacks(self, ennemy):
         """ function for attacks an ennemy """
         print(f"{self.name} attack {ennemy.name}")
+
+    def protection(self):
+        """ function for attacks protection """
+        print(f"{self.name} se protege")
