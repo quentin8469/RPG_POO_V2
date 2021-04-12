@@ -13,7 +13,11 @@ class Personnage:
         """ initialation of a person """
         self.name = name
         self.life = life
-        print(f"coucou je suis {self.name}")
+        print(f"Coucou je suis {self.name}")
 
     def presentation(self):
         print(f"Nom: {self.name}, Points de vie: {self.life}")
+
+    def attacks(self, ennemy):
+        """ function for attacks an ennemy """
+        print(f"{self.name} attack {ennemy.name}")
