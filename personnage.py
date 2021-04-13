@@ -17,13 +17,12 @@ class Person:
         self.classe = classe
         self.strength = strength
         self.intelligence = intelligence
-        self.init = random.randrange(1, 10)
         self.mana = mana
 
     def presentation(self):
         print(
             f"Nom: {self.name}, Classe: {self.classe},\
-Points de vie: {self.life}, initiative:{self.init}"
+Points de vie: {self.life}"
         )
 
     def attacks(self, ennemy):
@@ -50,4 +49,12 @@ Points de vie: {self.life}, initiative:{self.init}"
         """ docstring"""
         if self.life > 0:
             self.life -= degats
-            print(f"{self.name} à encore {self.life} PV")
+            if self.life > 0:
+                print(f"{self.name} à encore {self.life} PV")
+                return self.life
+        if self.life <= 0:
+            print(f"{self.name} est mort")
+
+    def escape(self):
+        if self.life <= 40:
+            print(f"{self.name} run away")
