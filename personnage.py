@@ -3,7 +3,7 @@ import random
 
 class Person:
     """
-    docstring
+    Mother class with base attributs
     """
 
     max_life = 100
@@ -22,7 +22,8 @@ class Person:
 
     def presentation(self):
         print(
-            f"Nom: {self.name}, Classe: {self.classe}, Points de vie: {self.life}, initiative:{self.init}"
+            f"Nom: {self.name}, Classe: {self.classe},\
+Points de vie: {self.life}, initiative:{self.init}"
         )
 
     def attacks(self, ennemy):
@@ -38,10 +39,15 @@ class Person:
             return degats
         if self.classe == "Voleur":
             degats = self.strength + self.intelligence
-            print(f"{self.name} attack {ennemy.name} and do {degats} PV")
             return degats
 
     def protection(self):
         """ function for attacks protection """
 
         print(f"{self.name} se protege")
+
+    def damage(self, degats):
+        """ docstring"""
+        if self.life > 0:
+            self.life -= degats
+            print(f"{self.name} à encore {self.life} PV")
