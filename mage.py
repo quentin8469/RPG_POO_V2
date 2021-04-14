@@ -3,7 +3,7 @@ from personnage import Person
 
 class Wizzard(Person):
     """
-    docstring
+    Create a Wizzard
     """
 
     max_life = 200
@@ -15,8 +15,11 @@ class Wizzard(Person):
     def drink_potion(self, potion):
         """ drink heal potion """
         if self.life < Wizzard.max_life:
-            print(Wizzard.max_life)
-            print("Besoin de potions")
+            self.life = self.life + potion.hp
+            if self.life > Wizzard.max_life:
+                self.life = Wizzard.max_life
+            print(self.life)
+            print("vous avez pris une potions")
         else:
-            # print(Wizzard.max_life)
+            print(self.life)
             print("pas besoin de potions")
