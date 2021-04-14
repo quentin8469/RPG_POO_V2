@@ -3,7 +3,7 @@ from personnage import Person
 
 class Rogue(Person):
     """
-    docstring
+    Create a rogue
     """
 
     max_life = 300
@@ -19,8 +19,11 @@ class Rogue(Person):
     def drink_potion(self, potion):
         """ drink heal potion """
         if self.life < Rogue.max_life:
-            print(Rogue.max_life)
-            print("Besoin de potions")
+            self.life = self.life + potion.hp
+            if self.life > Rogue.max_life:
+                self.life = Rogue.max_life
+            print(self.life)
+            print("vous avez pris une potions")
         else:
-            # print(Rogue.max_life)
+            print(self.life)
             print("pas besoin de potions")
