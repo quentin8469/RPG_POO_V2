@@ -15,3 +15,12 @@ class Rogue(Person):
     def steal(self):
         """ steal a potion """
         print(f"{self.name} à volé la potion")
+
+    def drink_potion(self, potion):
+        """ drink heal potion """
+        if self.life < Rogue.max_life:
+            print(Rogue.max_life)
+            print("Besoin de potions")
+        else:
+            # print(Rogue.max_life)
+            print("pas besoin de potions")
