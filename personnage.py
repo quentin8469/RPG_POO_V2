@@ -62,8 +62,11 @@ class Person:
     def drink_potion(self, potion):
         """ drink heal potion """
         if self.life < Person.max_life:
-            print(Person.max_life)
-            print("Besoin de potions")
+            self.life = self.life + potion.hp
+            if self.life > Person.max_life:
+                self.life = Person.max_life
+            print(self.life)
+            print("vous avez pris une potions")
         else:
-            print(Person.max_life)
+            print(self.life)
             print("pas besoin de potions")
