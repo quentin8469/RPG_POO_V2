@@ -22,7 +22,7 @@ class Person:
     def presentation(self):
         print(
             f"Nom: {self.name}, Classe: {self.classe},\
-Points de vie: {self.life}"
+ Points de vie: {self.life}"
         )
 
     def attacks(self, ennemy):
@@ -58,3 +58,12 @@ Points de vie: {self.life}"
     def escape(self):
         if self.life <= 40:
             print(f"{self.name} run away")
+
+    def drink_potion(self, potion):
+        """ drink heal potion """
+        if self.life < Person.max_life:
+            print(Person.max_life)
+            print("Besoin de potions")
+        else:
+            print(Person.max_life)
+            print("pas besoin de potions")
