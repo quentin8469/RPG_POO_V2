@@ -3,7 +3,7 @@ from personnage import Person
 
 class Warrior(Person):
     """
-    docstring
+    Create a warrior
     """
 
     max_life = 400
@@ -15,8 +15,11 @@ class Warrior(Person):
     def drink_potion(self, potion):
         """ drink heal potion """
         if self.life < Warrior.max_life:
-            print(Warrior.max_life)
-            print("Besoin de potions")
+            self.life = self.life + potion.hp
+            if self.life > Warrior.max_life:
+                self.life = Warrior.max_life
+            print(self.life)
+            print("vous avez pris une potions")
         else:
-            # print(Warrior.max_life)
+            print(self.life)
             print("pas besoin de potions")
