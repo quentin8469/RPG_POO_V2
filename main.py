@@ -1,17 +1,20 @@
-from personnage import Personnage
+
+from personnage import Person
 from guerrier import Warrior
 from mage import Wizzard
 from voleur import Rogue
+from arene import Arena
+from potion import Potion
 
-'''
-def main():
-    """ docstring"""
-    return
-'''
 
 if __name__ == "__main__":
     """ """
-    perso_1 = Personnage("bill")
-    perso_2 = Warrior("bob")
-    perso_3 = Wizzard("Bryan")
-    perso_4 = Rogue("bob")
+    # instanciation des personnages
+    warrior = Warrior("Edgar")
+    warrior.presentation()
+    wizzard = Wizzard("Tristan")
+    wizzard.presentation()
+    # instanciation de l'arene avec les personnages
+    arena = Arena(wizzard, warrior)
+    # Début du combat
+    arena.battle()
