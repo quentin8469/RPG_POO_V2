@@ -19,8 +19,12 @@ class Arena:
 
     def battle(self):
         """ start to fight"""
-        print("Tout les combattants sont dans l'arene, le combat peut commencer")
+
+        print("Tout les combattants sont dans l'arene, le combat peut commencer!!")
+        round_nb = 0
         while self.player1.life > 0 and self.player2.life > 0:
+            round_nb += 1
+            print("Round:", round_nb)
             self.player1.init = random.randrange(1, 10)
             self.player2.init = random.randrange(1, 10)
 
