@@ -1,4 +1,3 @@
-import random
 
 
 class Person:
@@ -11,7 +10,7 @@ class Person:
     def __init__(
         self, name, life=100, classe="", strength=10, intelligence=10, mana=10
     ):
-        """ initialation of a person """
+        """ initialisation of a person """
         self.name = name
         self.life = life
         self.classe = classe
@@ -25,8 +24,8 @@ class Person:
  Points de vie: {self.life}"
         )
 
-    def attacks(self, ennemy):
-        """ function for attacks an ennemy """
+    def attacks(self):
+        """ function for attacks an enemy """
         if self.classe == "":
             degats = self.strength
             return degats
