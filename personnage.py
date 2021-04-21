@@ -1,5 +1,3 @@
-
-
 class Person:
     """
     Mother class with base attributs
@@ -28,9 +26,6 @@ class Person:
         """ function for attacks an enemy """
         if self.classe == "":
             degats = self.strength
-            return degats
-        if self.classe == "Guerrier":
-            degats = self.strength * 2
             return degats
         if self.classe == "Mage":
             degats = self.mana * 2
