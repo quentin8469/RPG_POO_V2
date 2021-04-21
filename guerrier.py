@@ -17,6 +17,9 @@ class Warrior(Person):
         degats = self.strength * 2
         return degats
 
+    def protection(self):
+        """ """
+        return 20
 
     def drink_potion(self, potion):
         """ drink heal potion """
