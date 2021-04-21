@@ -26,8 +26,7 @@ class Rogue(Person):
             self.life = self.life + potion.hp
             if self.life > Rogue.max_life:
                 self.life = Rogue.max_life
-            print(self.life)
-            print("vous avez pris une potions")
+            print(f"vous avez pris une potions vous avez mainenant {self.life}")
         else:
             print(self.life)
             print("pas besoin de potions")
