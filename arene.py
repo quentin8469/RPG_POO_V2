@@ -1,4 +1,5 @@
 import random
+from potion import Potion
 
 
 class Arena:
@@ -17,6 +18,7 @@ class Arena:
 
     def battle(self):
         """ start to fight"""
+        potion = Potion()
 
         print("Tout les combattants sont dans l'arène, le combat peut commencer!!")
         round_nb = 0
@@ -34,7 +36,6 @@ class Arena:
 {damage} of damages"
                 )
                 self.player2.damage(damage)
-
             else:
                 print(f"{self.player2.name} tu a l'initiative")
                 damage = self.player2.attacks()
@@ -43,3 +44,17 @@ class Arena:
 {damage} of damages"
                 )
                 self.player1.damage(damage)
+
+            if self.player1.life < 100 and Potion.number_max_of_potion != 0:
+                self.player1.drink_potion(potion)
+                Potion.number_max_of_potion -= 1
+                print(f"il reste {Potion.number_max_of_potion}")
+            else:
+                pass
+
+            if self.player2.life < 100 and Potion.number_max_of_potion != 0:
+                self.player2.drink_potion(potion)
+                Potion.number_max_of_potion -= 1
+                print(f"il reste {Potion.number_max_of_potion} potions")
+            else:
+                pass
