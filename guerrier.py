@@ -9,8 +9,14 @@ class Warrior(Person):
     max_life = 400
 
     def __init__(self, name):
-        """ initialiation of a warrior """
+        """ initialisation of a warrior """
         super().__init__(name, 400, "Guerrier", 20, 10, 15)
+
+    def attacks(self):
+        """ """
+        degats = self.strength * 2
+        return degats
+
 
     def drink_potion(self, potion):
         """ drink heal potion """
