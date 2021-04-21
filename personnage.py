@@ -35,9 +35,9 @@ class Person:
             return degats
 
     def protection(self):
-        """ function for attacks protection """
+        """ function for the protection """
 
-        print(f"{self.name} se protege")
+        return 5
 
     def damage(self, degats):
         """ docstring"""
