@@ -16,6 +16,23 @@ class Arena:
 {player2.classe} prêt pour le combat ???"
         )
 
+    def use_potion(self, life, potion):
+        """ check it's possible to use potion"""
+        if self.player1.life < 100 and Potion.number_max_of_potion != 0:
+            self.player1.drink_potion(potion)
+            Potion.number_max_of_potion -= 1
+
+            print(f"il reste {Potion.number_max_of_potion} potions")
+        else:
+            pass
+
+        if self.player2.life < 100 and Potion.number_max_of_potion != 0:
+            self.player2.drink_potion(potion)
+            Potion.number_max_of_potion -= 1
+            print(f"il reste {Potion.number_max_of_potion} potions")
+        else:
+            pass
+
     def battle(self):
         """ start to fight"""
         potion = Potion()
@@ -35,7 +52,8 @@ class Arena:
                     f"{self.player1.name} attack {self.player2.name} and do \
 {damage} of damages"
                 )
-                self.player2.damage(damage)
+                new_life = self.player2.damage(damage)
+                self.use_potion(new_life, potion)
             else:
                 print(f"{self.player2.name} tu a l'initiative")
                 damage = self.player2.attacks()
@@ -43,12 +61,15 @@ class Arena:
                     f"{self.player2.name} attack {self.player1.name} and do \
 {damage} of damages"
                 )
-                self.player1.damage(damage)
+                new_life = self.player1.damage(damage)
+                self.use_potion(new_life, potion)
+            """
 
             if self.player1.life < 100 and Potion.number_max_of_potion != 0:
                 self.player1.drink_potion(potion)
                 Potion.number_max_of_potion -= 1
-                print(f"il reste {Potion.number_max_of_potion}")
+
+                print(f"il reste {Potion.number_max_of_potion} potions")
             else:
                 pass
 
@@ -58,3 +79,4 @@ class Arena:
                 print(f"il reste {Potion.number_max_of_potion} potions")
             else:
                 pass
+            """
