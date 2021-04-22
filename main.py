@@ -1,20 +1,19 @@
+# coding: utf-8
 
-from personnage import Person
-from guerrier import Warrior
-from mage import Wizzard
-from voleur import Rogue
 from arene import Arena
-from potion import Potion
+from choice_class import ChoiceClass
 
 
 if __name__ == "__main__":
     """ """
-    # instanciation des personnages
-    warrior = Warrior("Edgar")
-    warrior.presentation()
-    wizzard = Wizzard("Tristan")
-    wizzard.presentation()
-    # instanciation de l'arene avec les personnages
-    arena = Arena(wizzard, warrior)
-    # Début du combat
+    choice = ChoiceClass()
+    print("Create your playeur!!")
+    player_choice = choice.choose_class()
+    player = choice.get_class(player_choice)
+    player.presentation()
+    print(f"{player.name} you can now create your enemy!!")
+    enemy_choice = choice.choose_class()
+    enemy = choice.get_class(enemy_choice)
+    enemy.presentation()
+    arena = Arena(player, enemy)
     arena.battle()
