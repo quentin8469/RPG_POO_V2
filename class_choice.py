@@ -8,8 +8,8 @@ class ChoiceClass:
 
     def choose_class(self):
         """ choose what you want play """
-        print(f"faites votre choix: {ChoiceClass.playable_class}")
-        class_name = input("Je veux un : ").lower()
+        print(f"Please, do your choice: {ChoiceClass.playable_class}")
+        class_name = input("I want play a : ").lower()
         print(f"Hello! So you want play a {class_name}, good choice!!")
         return class_name
 
@@ -19,16 +19,16 @@ class ChoiceClass:
             from guerrier import Warrior
 
             name = input("Enter your name: ")
-            return Warrior(name).presentation()
+            return Warrior(name)
         elif class_name == "rogue":
             from voleur import Rogue
 
             name = input("Enter your name: ")
 
-            return Rogue(name).presentation()
+            return Rogue(name)
         elif class_name == "wizard":
             from mage import Wizard
 
             name = input("Enter your name: ")
 
-            return Wizard(name).presentation()
+            return Wizard(name)
