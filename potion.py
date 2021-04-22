@@ -1,9 +1,10 @@
-
 class Potion:
     """
-    docstring
+    Create a heals potion
     """
-    number_of_potion = 5
+
+    number_max_of_potion = 5
 
     def __init__(self):
-        self.Hp = 200
+        self.hp = 100
+        print("We have", Potion.number_max_of_potion, "potions in the arena")
