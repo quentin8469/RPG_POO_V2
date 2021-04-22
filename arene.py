@@ -11,10 +11,18 @@ class Arena:
         """ initialisation of the arena """
         self.player1 = player1
         self.player2 = player2
-        print(
-            f"Bonjour {player1.name} le {player1.classe} et {player2.name} le \
-{player2.classe} prêt pour le combat ???"
-        )
+        welcome = f"Bonjour {player1.name} le {player1.classe} et \
+{player2.name} le {player2.classe} prêt pour le combat ???"
+        print(welcome)
+
+    def end_of_fight(self, player1, player2):
+        """ end of the battle """
+        if player1.life <= 0:
+            end = f"le combat est fini {player1.name} à vaincu"
+            print(end)
+        if player2.life <= 0:
+            end = f"le combat est fini {player2.name} à vaincu"
+            print(end)
 
     def use_potion(self, life, potion):
         """ check it's possible to use potion"""
@@ -63,20 +71,4 @@ class Arena:
                 )
                 new_life = self.player1.damage(damage)
                 self.use_potion(new_life, potion)
-            """
-
-            if self.player1.life < 100 and Potion.number_max_of_potion != 0:
-                self.player1.drink_potion(potion)
-                Potion.number_max_of_potion -= 1
-
-                print(f"il reste {Potion.number_max_of_potion} potions")
-            else:
-                pass
-
-            if self.player2.life < 100 and Potion.number_max_of_potion != 0:
-                self.player2.drink_potion(potion)
-                Potion.number_max_of_potion -= 1
-                print(f"il reste {Potion.number_max_of_potion} potions")
-            else:
-                pass
-            """
+            self.end_of_fight(self.player1, self.player2)
