@@ -18,33 +18,29 @@ class Person:
 
     def presentation(self):
         print(
-            f"Nom: {self.name}, Classe: {self.classe},\
- Points de vie: {self.life}"
+            f"Nom: {self.name}, Classe: {self.classe}, "
+            f"Points de vie: {self.life}"
         )
 
     def attacks(self):
         """ function for attacks an enemy """
-        if self.classe == "":
-            degats = self.strength
-            return degats
-        if self.classe == "Mage":
-            degats = self.mana * 2
-            return degats
-        if self.classe == "Voleur":
-            degats = self.strength + self.intelligence
-            return degats
+
+        degats = self.strength
+        return degats
 
     def protection(self):
         """ function for the protection """
-
         return 5
 
     def damage(self, degats):
         """ docstring"""
         if self.life > 0:
-            self.life -= degats
+            self.life -= degats - self.protection()
             if self.life > 0:
-                print(f"{self.name} à encore {self.life} PV")
+                print(
+                    f"{self.name} se protege de {self.protection()} et "
+                    f"à encore {self.life} PV"
+                )
                 return self.life
         if self.life <= 0:
             print(f"{self.name} est mort")
