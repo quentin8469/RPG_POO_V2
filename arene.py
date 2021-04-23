@@ -11,8 +11,10 @@ class Arena:
         """ initialisation of the arena """
         self.player1 = player1
         self.player2 = player2
-        welcome = f"Bonjour {player1.name} le {player1.classe} et \
-{player2.name} le {player2.classe} prêt pour le combat ???"
+        welcome = (
+            f"Bonjour {player1.name} le {player1.classe} et "
+            f"{player2.name} le {player2.classe} prêt pour le combat ???"
+        )
         print(welcome)
 
     def end_of_fight(self, player1, player2):
@@ -45,7 +47,10 @@ class Arena:
         """ start to fight"""
         potion = Potion()
 
-        print("Tout les combattants sont dans l'arène, le combat peut commencer!!")
+        print(
+            "Tout les combattants sont dans l'arène, \
+            le combat peut commencer!!"
+        )
         round_nb = 0
         while self.player1.life > 0 and self.player2.life > 0:
             round_nb += 1
@@ -57,8 +62,8 @@ class Arena:
                 print(f"{self.player1.name} tu a l'initiative")
                 damage = self.player1.attacks()
                 print(
-                    f"{self.player1.name} attack {self.player2.name} and do \
-{damage} of damages"
+                    f"{self.player1.name} attack {self.player2.name} and do "
+                    f"{damage} of damages"
                 )
                 new_life = self.player2.damage(damage)
                 self.use_potion(new_life, potion)
@@ -66,8 +71,8 @@ class Arena:
                 print(f"{self.player2.name} tu a l'initiative")
                 damage = self.player2.attacks()
                 print(
-                    f"{self.player2.name} attack {self.player1.name} and do \
-{damage} of damages"
+                    f"{self.player2.name} attack {self.player1.name} and do "
+                    f"{damage} of damages"
                 )
                 new_life = self.player1.damage(damage)
                 self.use_potion(new_life, potion)
